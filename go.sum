@@ -1,0 +1,4 @@
+github.com/gorilla/mux v1.7.4 h1:VuZ8uybHlWmqV03+zRzdwKL4tUnIp1MAQtp1mIFE1bc=
+github.com/gorilla/mux v1.7.4/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=
+github.com/robatussum/personal_web_be v0.0.0-20200509070812-0eeb7475283c h1:KgqcKyKzJiZXWj7EVm90NzP+u3J15HCNtCNrr5cePcs=
+github.com/robatussum/personal_web_be v0.0.0-20200509070812-0eeb7475283c/go.mod h1:i5e0J3GIw+DiUO4V6hl47rHoGlocQnEWfSKZ2cKwmx8=

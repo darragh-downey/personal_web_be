@@ -3,11 +3,10 @@ package articles
 import( 
 	"github.com/gorilla/mux"
 	"context"
-    "flag"
-    "log"
-    "net/http"
-    "os"
-    "os/signal"
+	"flag"
+	"log"
+	"net/http"
+	"os"
 	"time"
 	"io/ioutil"
 )
