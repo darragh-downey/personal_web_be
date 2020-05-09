@@ -2,18 +2,16 @@ package articles
 
 import( 
 	"github.com/gorilla/mux"
-	"context"
-	"flag"
+	"fmt"
 	"log"
 	"net/http"
-	"os"
-	"time"
+	"path"
 	"io/ioutil"
 )
 
 // ListHandler lists all articles
 func ListHandler(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
+	// vars := mux.Vars(r)
 	w.WriteHeader(http.StatusOK)
 	files, err := ioutil.ReadDir("./posts")
 	if err != nil {
@@ -21,7 +19,7 @@ func ListHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	for _, file := range files {
-		fmt.Printf(w, file.Name())
+		fmt.Fprintf(w, file.Name())
 	}
 }
 
@@ -30,18 +28,17 @@ func ContentHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	w.WriteHeader(http.StatusOK)
 	
-	filename := vars.Strip()
-	content, err := ioutil.ReadFile(os.path.Join("posts", vars))
+	content, err := ioutil.ReadFile(path.Join("posts", vars["filename"]))
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Printf(w, content)
+	fmt.Fprintf(w, string(content[:]))
 }
 
 // CategoryHandler filters articles by their tags
 func CategoryHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	w.WriteHeader(http.StatusOK)
-	fmt.Printf(w, "Category: %v\n", vars["category"])
+	fmt.Fprintf(w, "Category: %v\n", vars["category"])
 }
