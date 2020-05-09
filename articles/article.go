@@ -8,7 +8,8 @@ import(
     "net/http"
     "os"
     "os/signal"
-    "time"
+	"time"
+	"io/ioutil"
 )
 
 // ListHandler lists all articles
